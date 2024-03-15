@@ -2,7 +2,6 @@
   "name": "02-config-nodejs-ts",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "start:dev": "npx tsx ./src/index.ts",
@@ -35,7 +34,7 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
-    "inquirer": "^9.2.16",
+    "inquirer": "^8.2.5",
     "shelljs": "^0.8.5"
   }
 }
