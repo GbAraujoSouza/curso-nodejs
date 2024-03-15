@@ -11,14 +11,18 @@ class GenerateController {
       switch (answers.tech) {
         case EnumChoicesBoilerplate.NODE_TS:
           shellJs.cd(path.resolve());
-          shellJs.exec(`git clone git@github.com:troquatte/boilerplate-typescript-nodejs.git ./${answers.projectName}`);
+          shellJs.exec(
+            `git clone ${EnumGitRepos.NODE_TS} ./${answers.projectName}`,
+          );
           console.log('Boilerplate successfuly created');
-          
-          shellJs.exit(0);
-        case EnumChoicesBoilerplate.SCSS:
-          shellJs.cd(path.resolve());
-          shellJs.exec(`git clone ${EnumGitRepos.SCSS}`);
 
+          shellJs.exit(0);
+        case EnumChoicesBoilerplate.WEBPACK:
+          shellJs.cd(path.resolve());
+          shellJs.exec(
+            `git clone ${EnumGitRepos.WEBPACK} ./${answers.projectName}`,
+          );
+          console.log('Boilerplate successfuly created');
           shellJs.exit(0);
       }
     } catch (error) {

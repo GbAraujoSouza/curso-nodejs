@@ -5,7 +5,7 @@ export const questions = [
     type: 'list',
     name: 'tech',
     message: 'Which boilerplate should I create?',
-    choices: ['NodeJs + Typescipt', 'Scss'],
+    choices: ['NodeJs + Typescipt', 'Webpack'],
   },
   {
     type: 'input',
