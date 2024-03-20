@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from 'inquirer';
 import { questions } from './questions';
 import {GenFile} from './controllers/generateController';

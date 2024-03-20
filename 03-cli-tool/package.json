@@ -1,5 +1,5 @@
 {
-  "name": "02-config-nodejs-ts",
+  "name": "03-config-nodejs-ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,6 +14,9 @@
   },
   "keywords": [],
   "author": "",
+  "bin" : {
+    "boylerplate" : "./dist/index.js"   
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
