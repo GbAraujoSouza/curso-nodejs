@@ -1,5 +1,4 @@
 import express from 'express';
-import { router } from './router';
 import { userRouter } from './modules/User/router';
 class Main {
   private _server;
@@ -12,6 +11,7 @@ class Main {
 
   private _middleware() {
     this.server.use(express.json());
+    this.server.use(express.urlencoded({ extended: true }));
   }
 
   private _router() {

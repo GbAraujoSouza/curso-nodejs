@@ -1,6 +1,6 @@
 import main from './main';
 
-main.server.listen(3000, () =>
+main.server.listen(3001, () =>
   console.log('Servidor inicializado com sucesso'),
 );
 
