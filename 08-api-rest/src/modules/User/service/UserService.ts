@@ -38,6 +38,7 @@ class UserService {
   public async read({ userId }: { userId: string }) {
     const user = await prismaConnection.user.findUnique({
       where: { id: userId },
+      select: { id: true, name: true, email: true },
     });
     if (!user) {
       throw new Error('User no found');

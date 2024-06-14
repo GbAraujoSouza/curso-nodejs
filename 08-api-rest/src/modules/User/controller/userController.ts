@@ -54,7 +54,7 @@ class UserController {
       const ZUserIdSchema = z.string().uuid();
       ZUserIdSchema.parse(userId);
     } catch (error) {
-      return res.json(error);
+      return res.status(400).json(errorHandler.getErrorMessage(error));
     }
     try {
       return res.status(200).json({
@@ -62,7 +62,7 @@ class UserController {
         user: await userService.read({ userId }),
       });
     } catch (error) {
-      return res.status(409).json(errorHandler.getErrorMessage(error));
+      return res.status(404).json(errorHandler.getErrorMessage(error));
     }
   }
 }
