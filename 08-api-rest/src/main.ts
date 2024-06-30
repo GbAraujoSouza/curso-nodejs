@@ -1,5 +1,6 @@
 import express from 'express';
-import { userRouter } from './modules/User/router';
+// import { userRouter } from './modules/User/router';
+import { router } from './router';
 class Main {
   private _server;
 
@@ -15,7 +16,7 @@ class Main {
   }
 
   private _router() {
-    this.server.use('/user', userRouter);
+    this.server.use(router);
   }
 
   get server() {
