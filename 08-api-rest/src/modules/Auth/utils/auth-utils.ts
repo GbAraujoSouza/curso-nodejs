@@ -6,7 +6,7 @@ type TUserPayload = {
   password?: string;
 };
 
-class AuthTokenUtils {
+export class AuthTokenUtils {
   public static async jwtGenerate(userPayload: TUserPayload) {
     const payload = userPayload;
     delete payload.password;
@@ -17,17 +17,14 @@ class AuthTokenUtils {
         iat: Date.now(),
       },
       'abcdefgh123',
-      {
-        expiresIn: '15m',
-      },
+      { expiresIn: '15m' },
     );
     const refreshToken = jwt.sign(
       { payload: { id: payload.id } },
       'abcdefgh123',
+      { expiresIn: '7d' },
     );
 
     return { accessToken, refreshToken };
   }
 }
-
-export const authTokenUtils = AuthTokenUtils;
